@@ -189,28 +189,44 @@ h1, h2, h3 {
 
    <!-- Professional Photos Section -->
    <!-- Professional Photos Section -->
-<section id="photos" class="bg-gray-800 py-12">
-    <div class="max-w-7xl mx-auto px-5 text-center">
-       <h2 class="text-4xl font-bold text-purple-400">Professional Photos</h2>
-       <p class="mt-2 text-gray-400">Discover Farida's professional side through these photos.</p>
-       <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mt-8">
-          <!-- Professional Images with increased height -->
-          <div class="relative overflow-hidden rounded-lg shadow-lg">
-             <img src="assets/Image 1.jpg" alt="Professional Photo 1" class="object-cover w-full h-80 transition-transform transform hover:scale-105">
-          </div>
-          <div class="relative overflow-hidden rounded-lg shadow-lg">
-             <img src="assets/image2.jpg" alt="Professional Photo 2" class="object-cover w-full h-80 transition-transform transform hover:scale-105">
-          </div>
-          <div class="relative overflow-hidden rounded-lg shadow-lg">
-             <img src="assets/image3.jpg" alt="Professional Photo 3" class="object-cover w-full h-80 transition-transform transform hover:scale-105">
-          </div>
-          <div class="relative overflow-hidden rounded-lg shadow-lg">
-             <img src="assets/image4.jpg" alt="Professional Photo 4" class="object-cover w-full h-80 transition-transform transform hover:scale-105">
-          </div>
-       </div>
-    </div>
- </section>
- 
+   <section id="photos" class="bg-gray-800 py-12">
+      <div class="max-w-7xl mx-auto px-5 text-center">
+         <h2 class="text-4xl font-bold text-purple-400">Professional Photos</h2>
+         <p class="mt-2 text-gray-400">Discover Farida's professional side through these photos.</p>
+         
+         <!-- Enlarged Image Container, initially hidden -->
+         <div id="enlargedImageContainer" class="hidden my-8">
+            <img id="enlargedImage" src="" alt="Enlarged Professional Photo" class="w-full h-auto rounded-lg shadow-lg">
+            <button onclick="closeEnlargedImage()" class="mt-4 bg-purple-400 text-white px-4 py-2 rounded-lg">Close</button>
+         </div>
+  
+         <!-- Thumbnails for selection -->
+         <div id="thumbnailContainer" class="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-8">
+            <div class="relative overflow-hidden rounded-lg shadow-lg">
+               <img src="assets/Image1.jpg" alt="Professional Photo 1" class="object-cover w-full h-80 transition-transform transform hover:scale-105 cursor-pointer" onclick="showFullImage('assets/Image1.jpg')">
+            </div>
+            <div class="relative overflow-hidden rounded-lg shadow-lg">
+               <img src="assets/Image2.jpg" alt="Professional Photo 2" class="object-cover w-full h-80 transition-transform transform hover:scale-105 cursor-pointer" onclick="showFullImage('assets/Image2.jpg')">
+            </div>
+         </div>
+      </div>
+  </section>
+  
+  <script>
+      function showFullImage(imageSrc) {
+          // Hide the thumbnails and show the enlarged image
+          document.getElementById('thumbnailContainer').classList.add('hidden');
+          document.getElementById('enlargedImageContainer').classList.remove('hidden');
+          document.getElementById('enlargedImage').src = imageSrc;
+      }
+  
+      function closeEnlargedImage() {
+          // Hide the enlarged image and show the thumbnails
+          document.getElementById('enlargedImageContainer').classList.add('hidden');
+          document.getElementById('thumbnailContainer').classList.remove('hidden');
+      }
+  </script>
+  
 
    <!-- Contact Section -->
    <!-- Contact Section -->

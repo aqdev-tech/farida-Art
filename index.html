@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Farida's Art</title>
+   <!-- Tailwind CSS -->
+   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+   <!-- Google Fonts -->
+   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+   <!-- Font Awesome -->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Open+Sans:wght@300;400&display=swap" rel="stylesheet">
+   <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+   <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&display=swap" rel="stylesheet">
+   <link rel="icon" href="assets/fav icon.png" type="image/x-icon">
+
+   <style>
+      /* Custom CSS for animations */
+      @keyframes fadeInUp {
+         from { opacity: 0; transform: translateY(10px); }
+         to { opacity: 1; transform: translateY(0); }
+      }
+      .animate-fadeInUp {
+         animation: fadeInUp 1s ease-out forwards;
+      }
+
+      /* Crazy Scroll Animation for Mobile */
+      @keyframes crazyScroll {
+         0% { transform: translateY(50px); opacity: 0; }
+         50% { transform: translateY(-30px); opacity: 0.7; }
+         100% { transform: translateY(0); opacity: 1; }
+      }
+
+      @media (max-width: 768px) {
+         .animate-fadeInUp {
+            animation: crazyScroll 0.8s ease-out forwards;
+         }
+      }
+
+      /* Artistic background animation for the hero section */
+      @keyframes artisticBackground {
+         0% { background-position: 0% 50%; }
+         50% { background-position: 100% 50%; }
+         100% { background-position: 0% 50%; }
+      }
+      .bg-animated {
+         background: linear-gradient(120deg, #ff9ff3, #7f78d2, #74b9ff, #ff9ff3);
+         background-size: 300% 300%;
+         animation: artisticBackground 15s ease infinite;
+      }
+
+      /* Mobile Menu */
+      .mobile-menu {
+         display: none;
+      }
+      .mobile-menu.active {
+         display: block;
+      }
+      body {
+   font-family: 'Open Sans', sans-serif;
+}
+
+h1, h2, h3 {
+   font-family: 'Playfair Display', serif;
+}
+
+.header-logo {
+   font-family: 'Pacifico', cursive;
+}
+
+.skills-section h2 {
+   font-family: 'Cinzel Decorative', serif;
+}
+
+   </style>
+</head>
+<body class="font-poppins text-gray-300 bg-gray-900">
+
+   <!-- Navigation Bar -->
+   <nav class="fixed top-0 w-full bg-gray-900 shadow-lg z-50">
+      <div class="container mx-auto flex justify-between items-center py-4 px-5">
+         <a href="#" class="text-2xl font-bold text-purple-400">Farida's Art</a>
+
+         <!-- Desktop Menu -->
+         <div class="space-x-6 hidden md:flex">
+            <a href="#home" class="text-gray-300 hover:text-purple-400">Home</a>
+            <a href="#gallery" class="text-gray-300 hover:text-purple-400">Gallery</a>
+            <a href="#about" class="text-gray-300 hover:text-purple-400">About</a>
+            <a href="#photos" class="text-gray-300 hover:text-purple-400">Photos</a>
+            <a href="#contact" class="text-gray-300 hover:text-purple-400">Contact</a>
+            <a href="#skills" class="text-gray-300 hover:text-purple-400">Skills</a>
+
+         </div>
+
+         <!-- Mobile Menu Button -->
+         <button id="mobile-menu-button" class="md:hidden text-gray-300 hover:text-purple-400">
+            <i class="fas fa-bars fa-2x"></i>
+         </button>
+      </div>
+
+      <!-- Mobile Menu -->
+      <div id="mobile-menu" class="mobile-menu absolute top-0 left-0 w-full bg-gray-900 text-gray-300 p-6 md:hidden space-y-4">
+         <a href="#home" class="block hover:text-purple-400">Home</a>
+         <a href="#gallery" class="block hover:text-purple-400">Gallery</a>
+         <a href="#about" class="block hover:text-purple-400">About</a>
+         <a href="#photos" class="block hover:text-purple-400">Photos</a>
+         <a href="#contact" class="block hover:text-purple-400">Contact</a>
+         <a href="#skills" class="text-gray-300 hover:text-purple-400">Skills</a>
+
+      </div>
+   </nav>
+
+   <!-- Hero Section with Artistic Background Animation -->
+   <section id="home" class="bg-animated h-screen flex items-center justify-center text-center px-5">
+      <div class="animate-fadeInUp">
+         <h1 class="text-4xl md:text-6xl font-bold text-gray-200">Farida's Art</h1>
+         <p class="text-lg md:text-xl mt-3 text-gray-300">Discover Art in Every Stroke</p>
+         <button class="mt-5 px-6 py-3 bg-purple-500 text-gray-900 font-bold rounded-full hover:scale-105 transform transition-transform">Explore Art</button>
+      </div>
+   </section>
+
+   <!-- About Section -->
+   <section id="about" class="bg-gray-800 py-12">
+      <div class="text-center">
+         <div class="w-32 h-32 mx-auto rounded-full overflow-hidden border-4 border-purple-500">
+            <img src="assets/Image 1.jpg" alt="Farida's Profile Picture" class="object-cover w-full h-full">
+         </div>
+         <h2 class="text-3xl font-bold mt-4 text-purple-400">About Farida</h2>
+         <p class="mt-2 text-gray-400 max-w-2xl mx-auto">
+            Farida is a passionate artist with a unique style that brings emotions and stories to life through her art.
+         </p>
+      </div>
+   </section>
+
+   <!-- Skills Section -->
+<section id="skills" class="bg-gray-800 py-12">
+    <div class="max-w-7xl mx-auto px-5 text-center">
+       <h2 class="text-4xl font-bold text-purple-400">Skills</h2>
+       <p class="mt-2 text-gray-400">Transforming ideas and emotions into visual experiences.</p>
+       <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mt-8">
+          
+          <!-- Skill 1: Bringing Imagination to Reality -->
+          <div class="bg-gray-900 p-6 rounded-lg shadow-lg hover:scale-105 transform transition-transform">
+             <i class="fas fa-brain text-purple-400 text-4xl mb-4"></i>
+             <h3 class="text-2xl font-bold text-gray-200">Imagination to Reality</h3>
+             <p class="mt-2 text-gray-400">Transforming creative thoughts and concepts into tangible, engaging visuals.</p>
+          </div>
+          
+          <!-- Skill 2: Storytelling through Art -->
+          <div class="bg-gray-900 p-6 rounded-lg shadow-lg hover:scale-105 transform transition-transform">
+             <i class="fas fa-book-open text-purple-400 text-4xl mb-4"></i>
+             <h3 class="text-2xl font-bold text-gray-200">Storytelling through Art</h3>
+             <p class="mt-2 text-gray-400">Crafting compelling narratives and conveying emotions through visual art.</p>
+          </div>
+          
+          <!-- Skill 3: Creative Vision -->
+          <div class="bg-gray-900 p-6 rounded-lg shadow-lg hover:scale-105 transform transition-transform">
+             <i class="fas fa-eye text-purple-400 text-4xl mb-4"></i>
+             <h3 class="text-2xl font-bold text-gray-200">Creative Vision</h3>
+             <p class="mt-2 text-gray-400">Seeing beyond the ordinary to create fresh, inspiring perspectives in artwork.</p>
+          </div>
+       </div>
+    </div>
+ </section>
+ 
+
+   <!-- Gallery Section -->
+   <section id="gallery" class="bg-gray-900 py-12">
+      <div class="max-w-7xl mx-auto px-5">
+         <h2 class="text-4xl font-bold text-center text-purple-400">Gallery</h2>
+         <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-6">
+            <!-- Art Pieces -->
+            <div class="relative overflow-hidden rounded-lg shadow-lg">
+               <img src="assets/Art 1.jpg" alt="Artwork 1" class="object-cover w-full h-48 transition-transform transform hover:scale-105">
+            </div>
+            <div class="relative overflow-hidden rounded-lg shadow-lg">
+               <img src="assets/Art 2.jpg" alt="Artwork 2" class="object-cover w-full h-48 transition-transform transform hover:scale-105">
+            </div>
+            <div class="relative overflow-hidden rounded-lg shadow-lg">
+               <img src="assets/Art 3.jpg" alt="Artwork 3" class="object-cover w-full h-48 transition-transform transform hover:scale-105">
+            </div>
+            <div class="relative overflow-hidden rounded-lg shadow-lg">
+               <img src="assets/Art 4.jpg" alt="Artwork 4" class="object-cover w-full h-48 transition-transform transform hover:scale-105">
+            </div>
+         </div>
+      </div>
+   </section>
+
+   <!-- Professional Photos Section -->
+   <!-- Professional Photos Section -->
+<section id="photos" class="bg-gray-800 py-12">
+    <div class="max-w-7xl mx-auto px-5 text-center">
+       <h2 class="text-4xl font-bold text-purple-400">Professional Photos</h2>
+       <p class="mt-2 text-gray-400">Discover Farida's professional side through these photos.</p>
+       <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mt-8">
+          <!-- Professional Images with increased height -->
+          <div class="relative overflow-hidden rounded-lg shadow-lg">
+             <img src="assets/Image 1.jpg" alt="Professional Photo 1" class="object-cover w-full h-80 transition-transform transform hover:scale-105">
+          </div>
+          <div class="relative overflow-hidden rounded-lg shadow-lg">
+             <img src="assets/Image 2.jpg" alt="Professional Photo 2" class="object-cover w-full h-80 transition-transform transform hover:scale-105">
+          </div>
+          <div class="relative overflow-hidden rounded-lg shadow-lg">
+             <img src="assets/Image 3.jpg" alt="Professional Photo 3" class="object-cover w-full h-80 transition-transform transform hover:scale-105">
+          </div>
+          <div class="relative overflow-hidden rounded-lg shadow-lg">
+             <img src="assets/Image 4.jpg" alt="Professional Photo 4" class="object-cover w-full h-80 transition-transform transform hover:scale-105">
+          </div>
+       </div>
+    </div>
+ </section>
+ 
+
+   <!-- Contact Section -->
+   <!-- Contact Section -->
+<section id="contact" class="bg-gray-800 py-12">
+    <div class="text-center">
+       <h2 class="text-4xl font-bold text-purple-400">Contact Farida</h2>
+       <p class="text-gray-400 mt-2">Feel free to reach out through any of the platforms below.</p>
+       <div class="flex justify-center mt-6 space-x-6">
+          <!-- Email Icon -->
+          <a href="mailto:faridaumar000@gmail.com" class="text-gray-300 hover:text-purple-400">
+             <i class="fas fa-envelope fa-2x"></i>
+          </a>
+          <!-- Phone Icon -->
+          <a href="tel:+2347032098960" class="text-gray-300 hover:text-purple-400">
+             <i class="fas fa-phone fa-2x"></i>
+          </a>
+          <!-- Instagram Icon -->
+          <a href="https://www.instagram.com/iam_faridart?igsh=MWZuOGptZjkxN2ZnOA==" target="_blank" class="text-gray-300 hover:text-purple-400">
+             <i class="fab fa-instagram fa-2x"></i>
+          </a>
+       </div>
+    </div>
+ </section>
+ 
+
+   <!-- Footer -->
+   <!-- Footer -->
+<footer class="bg-gray-900 text-gray-500 py-6">
+    <div class="text-center space-y-3">
+       <a href="#home" class="hover:text-purple-400">Home</a>
+       <a href="#gallery" class="hover:text-purple-400">Gallery</a>
+       <a href="#about" class="hover:text-purple-400">About</a>
+       <a href="#photos" class="hover:text-purple-400">Photos</a>
+       <a href="#contact" class="hover:text-purple-400">Contact</a>
+       <p class="text-sm">&copy; 2024 Farida's Art. All rights reserved.</p>
+       <p class="text-sm">
+          Made by <a href="https://aqdev.onrender.com/" target="_blank" class="text-purple-400 hover:underline">AQDEV</a>
+       </p>
+    </div>
+ </footer>
+ 
+
+   <script>
+    // Toggle mobile menu
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+ 
+    // Open/close the mobile menu when the button is clicked
+    mobileMenuButton.addEventListener('click', () => {
+       mobileMenu.classList.toggle('active');
+    });
+ 
+    // Close the mobile menu when a link is clicked
+    const mobileLinks = mobileMenu.querySelectorAll('a');
+    mobileLinks.forEach(link => {
+       link.addEventListener('click', () => {
+          mobileMenu.classList.remove('active');
+       });
+    });
+ 
+    // Smooth scroll for navigation links
+    const links = document.querySelectorAll('nav a');
+    links.forEach(link => {
+       link.addEventListener('click', (e) => {
+          e.preventDefault();
+          const targetId = link.getAttribute('href').substring(1);
+          const targetElement = document.getElementById(targetId);
+          window.scrollTo({
+             top: targetElement.offsetTop - 70,
+             behavior: 'smooth'
+          });
+       });
+    });
+ </script>
+ 
+</body>
+</html>
